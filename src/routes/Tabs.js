@@ -6,7 +6,7 @@ const Tab = createBottomTabNavigator()
 
 // import Contratos from '../screens/Contratos'
 import Empresas from '../screens/Empresas'
-// import Municipios from '../screens/Municipios'
+import Municipios from '../screens/Municipios'
 
 function Tabs() {
     return (
@@ -18,8 +18,8 @@ function Tabs() {
                 style: {
                     paddingTop: 4,
                     paddingBottom: 4,
-                    borderTopWidth: 1
-                }
+                    borderTopWidth: 1,
+                },
             }}>
 
             {/* <Tab.Navigator
@@ -34,17 +34,19 @@ function Tabs() {
                 name='Empresas'
                 component={Empresas}
                 options={{
-                    tabBarIcon: () => (<FontAwesome5 name='building' size={24} />)
+                    tabBarIcon: () => (<FontAwesome5 name='building' size={24} />),
+                    tabBarLabel: 'Empresas'
                 }}
             />
 
-            {/* <Tab.Screen
+            <Tab.Screen
                 name='Municípios'
                 component={Municipios}
                 options={{
-                    tabBarIcon: () => (<FontAwesome5 name='city' size={24} />)
+                    tabBarIcon: () => (<FontAwesome5 name='city' size={24} />),
+                    tabBarLabel: 'Municípios' 
                 }}
-            /> */}
+            />
         </Tab.Navigator>
     )
 }

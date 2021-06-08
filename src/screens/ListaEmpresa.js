@@ -79,8 +79,11 @@ function ListaEmpresas({ data, navigation }) {
     }
 
     const alterarEmpresa = async (data) => {
-        navigation.navigate('AdicionarCategoria', {
-            data: data
+        navigation.navigate('AdicionaEmpresa', {
+            data: data,
+            cap: {
+                text: 'Edite a empresa selecionada'
+            }
         })
     }
     

@@ -5,7 +5,7 @@ import {List, Avatar, FAB} from 'react-native-paper'
 import {backend} from '../constants/index'
 import ListaEmpresa from './ListaEmpresa'
 
-function ListaEmpresas({ navigation }) {
+function ListarEmpresas({ navigation }) {
     //Pra não perder o costume, este useState é para simplificar os objetos
     const [empresas, setEmpresas] = useState([])
     const [carregandoEmpresas, setCarregandoEmpresas] = useState(false)
@@ -92,11 +92,14 @@ function ListaEmpresas({ navigation }) {
                     style={estilos.fab}
                     icon='plus'
                     label=''
-                    onPress={() => navigation.navigate('AdicionarEmpresa', {
+                    onPress={() => navigation.navigate('AdicionaEmpresa', {
                         data: {
                             _id: null,
                             nome: '',
                             cnpj: '',
+                        },
+                        cap: {
+                            text: 'Insira os dados da nova empresa'
                         }
                     })}
                 />
@@ -124,4 +127,4 @@ const estilos = StyleSheet.create({
     }
 })
 
-export default ListaEmpresas
+export default ListarEmpresas
