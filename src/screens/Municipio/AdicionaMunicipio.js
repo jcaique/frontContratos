@@ -26,7 +26,7 @@ function AdicionaMunicipio({ route }) {
         })
             .then(response => response.json())
             .then(data => {
-                Alert.alert('Aviso', data.message)
+                Alert.alert('Aviso', 'Municipio salvo com sucesso.')
                 setNome('')
             })
             .catch(function (error) {
