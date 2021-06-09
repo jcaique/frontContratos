@@ -117,14 +117,8 @@ function ListaEmpresa({ data, navigation }) {
 
 const estilos = StyleSheet.create({
     container: {
-        flex: 1,
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        flexDirection: 'row',
-        height: 100,
-        borderRadius: 8,
-        marginBottom: 2,
-        marginHorizontal: 8
+        flex: 1, justifyContent: 'center', backgroundColor: '#0082c1',
+        borderRadius: 20, margin: 10, padding: 1
     },
     btnExcluirEmpresa: {
         backgroundColor: '#d9534f',

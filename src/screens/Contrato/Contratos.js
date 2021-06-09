@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, FlatList } from 'react-native'
+import { View, FlatList, Text } from 'react-native'
 import { List } from 'react-native-paper'
 
 function Contratos({ navigation }) {
@@ -18,7 +18,7 @@ function Contratos({ navigation }) {
         // }
         // ,
         {
-            id: 1, nome: 'Adicionar', descricao: 'Adicionar um contrato', icone: 'plus',
+            id: 2, nome: 'Adicionar', descricao: 'Adicionar um contrato (EM BREVE)', icone: 'plus',
             menu: 'AdicionaContrato'
         }
     ]
@@ -39,6 +39,12 @@ function Contratos({ navigation }) {
                         <View style={{
                             flex: 1, justifyContent: 'center', borderRadius: 20, margin: 8
                         }}>
+
+                            {/* if(opcoes.id === 2){
+                                <View style={{backgroundColor:'red'}}>
+                                    <Text>EM BREVE</Text>                                    
+                                </View> 
+                            }*/}
 
                             <List.Item
                                 title={item.nome}

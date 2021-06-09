@@ -97,7 +97,7 @@ function ListaMunicipios({ navigation }) {
                     onPress={() => navigation.navigate('AdicionaMunicipio', {
                         data: {
                             _id: null,
-                            nome: '',                            
+                            nome: '',                           
                         },
                         cap: {
                             text: 'Insira os dados do novo Municipio'

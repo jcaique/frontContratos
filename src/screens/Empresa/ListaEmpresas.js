@@ -51,8 +51,8 @@ function ListarEmpresas({ navigation }) {
     return (
         <>
             <View style={{
-                backgroundColor: '#fbfbfb', paddingHorizontal: 8,
-                paddingVertical: 8, flex: 1
+                backgroundColor: '#fbfbfb', paddingHorizontal: 10,
+                paddingVertical: 8, flex: 1, padding:1
             }}
             >
                 <List.Subheader>

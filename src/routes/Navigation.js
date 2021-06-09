@@ -6,6 +6,7 @@ import Contratos from '../screens/Contrato/Contratos'
 import ListaContratos from '../screens/Contrato/ListaContratos'
 import ListaContrato from '../screens/Contrato/ListaContrato'
 import AdicionaContrato from '../screens/Contrato/AdicionaContrato'
+import MostraContrato from '../screens/Contrato/MostraContrato'
 import Empresas from '../screens/Empresa/Empresas'
 import Municipios from '../screens/Municipio/Municipios'
 import ListaMunicipios from '../screens/Municipio/ListaMunicipios'
@@ -118,13 +119,22 @@ export default function Navigation() {
                     }}
                 />
 
-                <Stack.Screen
+                {/* <Stack.Screen
                     name='AdicionaContrato'
                     component={AdicionaContrato}
                     options={{
                         headerShown: true,
                     }}
-                />
+                /> */}
+
+                {/* <Stack.Screen
+                    name='MostraContrato'
+                    component={MostraContrato}
+                    options={{
+                        headerShown: true,
+                        title:'Contrato Selecionado'
+                    }}
+                /> */}
             </Stack.Navigator>
         </NavigationContainer>
 
