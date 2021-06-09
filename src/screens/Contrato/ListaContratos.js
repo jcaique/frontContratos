@@ -2,37 +2,37 @@ import React, {useEffect, useState} from 'react'
 import {View, ActivityIndicator, Text, StyleSheet, FlatList, RefreshControl, Alert} from 'react-native'
 import {List, Avatar, FAB} from 'react-native-paper'
 //fazer o header
-import {backend} from '../constants/index'
-import ListaEmpresa from './ListaEmpresa'
+import {backend} from '../../constants/index'
+//import ListaMunicipio from './ListaMunicipio'
 
-function ListarEmpresas({ navigation }) {
+import ListaContrato from './ListaContrato'
+
+function ListaContratos({ navigation }) {
     //Pra não perder o costume, este useState é para simplificar os objetos
-    const [empresas, setEmpresas] = useState([])
-    const [carregandoEmpresas, setCarregandoEmpresas] = useState(false)
+    const [contratos, setContratos] = useState([])
+    const [carregandoContratos, setCarregandoContratos] = useState(false)
     const [refreshing, setRefreshing] = useState(false)
 
     //useEffect será executado ao carregar a pagina
     useEffect(() => {
-        obterEmpresas()
+        obterContratos()
     }, [])
 
-    async function obterEmpresas(){
-        setCarregandoEmpresas(true)
-
-        let url = `${backend}/empresas`
-        await fetch(url)
-        
+    async function obterContratos(){
+        setCarregandoContratos(true)
+        let url = `${backend}/contratos`
+        await fetch(url)        
         .then( (response) => response.json())
         
         .then(data => {
-            setEmpresas(data)
+            setContratos(data)
         })
 
         .catch((error) =>{
             Alert.alert('Erro ao obter dados.' + `\n ${error.message}`)
         })
 
-        setCarregandoEmpresas(false)
+        setCarregandoContratos(false)
     }
 
     //Ao deslisar para atualizar
@@ -40,7 +40,7 @@ function ListarEmpresas({ navigation }) {
         setRefreshing(true)
 
         try {
-            await obterEmpresas()
+            await obterContratos()
         } catch (error) {
             console.log(error)
         }
@@ -63,19 +63,18 @@ function ListarEmpresas({ navigation }) {
                     /> Atualizar
                 </List.Subheader>
 
-                {carregandoEmpresas && <ActivityIndicator size='large' color='#0000ff' />}
+                {carregandoContratos && <ActivityIndicator size='large' color='#0000ff' />}
 
-                {/* Mais um operador ternário aqui */}
-                {empresas.length === 0 && !carregandoEmpresas ?
+                {contratos.length === 0 && !carregandoContratos ?
                     (
                         <View style={estilos.aviso}>
-                            <Text style={estilos.tituloAviso}>Ainda não há empresas cadastradas.</Text>
+                            <Text style={estilos.tituloAviso}>Ainda não há Contratos.</Text>
                         </View>
                     ) : (
                         <FlatList
-                            data={empresas}
+                            data={contratos.contratos}
                             renderItem={({ item }) => (
-                                <ListaEmpresa data={item} navigation={navigation} />
+                                <ListaContrato data={item} />
                             )}
                             keyExtractor={item => item._id.toString()}
                             refreshControl={
@@ -87,36 +86,12 @@ function ListarEmpresas({ navigation }) {
                         />
                     )
                 }
-
-                <FAB
-                    style={estilos.fab}
-                    icon='plus'
-                    label=''
-                    onPress={() => navigation.navigate('AdicionaEmpresa', {
-                        data: {
-                            _id: null,
-                            nome: '',
-                            cnpj: '',
-                        },
-                        cap: {
-                            text: 'Insira os dados da nova empresa'
-                        }
-                    })}
-                />
             </View>
         </>
     )
 }
 
 const estilos = StyleSheet.create({
-    fab: {
-        position: 'absolute',
-        margin: 16,
-        right: 0,
-        bottom: 0,
-        backgroundColor: '#0000ff'
-    },
-
     aviso: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -127,4 +102,4 @@ const estilos = StyleSheet.create({
     }
 })
 
-export default ListarEmpresas
+export default ListaContratos

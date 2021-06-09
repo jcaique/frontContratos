@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Text, Alert, TabBarIOSItem } from 'react-native'
 import { Avatar, Caption, TextInput, FAB, Button, HelperText, Checkbox, ProgressBar, Snackbar, } from 'react-native-paper'
-import { backend } from '../constants'
-
-import * as DocumentPicker from 'expo-document-picker'
+import { backend } from '../../constants'
 
 function AdicionaEmpresa({navigation, route }) {
     //Obtendo os dados para alteração via rota

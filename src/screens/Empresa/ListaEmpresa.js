@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image, Alert, ActivityIndicator } from 'react-native'
 import Swipeable from 'react-native-gesture-handler/Swipeable'
-import { backend, sizes} from '../constants'
+import { backend, sizes} from '../../constants'
 
 import { List, Avatar} from 'react-native-paper'
 
-function ListaEmpresas({ data, navigation }) {
+function ListaEmpresa({ data, navigation }) {
     const [excluindo, setExcluindo] = useState(false)
 
     //Botão para excluir ao arrastar lista para o lado direito 
@@ -139,4 +139,4 @@ const estilos = StyleSheet.create({
     }
 })
 
-export default ListaEmpresas
+export default ListaEmpresa

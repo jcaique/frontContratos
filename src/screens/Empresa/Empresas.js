@@ -1,13 +1,17 @@
 import React from 'react'
-import { View, FlatList} from 'react-native'
-import {List} from 'react-native-paper'
+import { View, FlatList } from 'react-native'
+import { List } from 'react-native-paper'
 
-function Municipios({navigation}){
+function Empresas({ navigation }) {
     const opcoes = [
         {
-            id: 1, nome: 'Municípios', descricao: 'Ver municípios cadastrados', icone:'city-variant-outline',
-            menu: 'ListaMunicipios'
+            id: 1, nome: 'Empresas', descricao: 'Empresas cadastradas', icone: 'domain',
+            menu: 'ListaEmpresas'
         },
+        {
+            id: 2, nome: 'Pesquisar', descricao: 'Encontre uma empresa específica', icone: 'magnify',
+            menu: 'ListaEmpresaCnpj'
+        }
     ]
 
     return (
@@ -16,11 +20,9 @@ function Municipios({navigation}){
                 style={{
                     paddingHorizontal: 8,
                     paddingVertical: 16,
-                    flex: 1
+                    flex: 1,
                 }}
             >
-
-                <List.Subheader>O que deseja fazer?</List.Subheader>
 
                 <FlatList
                     data={opcoes}
@@ -31,7 +33,7 @@ function Municipios({navigation}){
 
                             <List.Item
                                 title={item.nome}
-                                style={{ backgroundColor: '#0082c1' }}
+                                style={{ backgroundColor: '#0082c1',borderTopRightRadius:10,borderTopLeftRadius:10, elevation: 10 }}
                                 titleStyle={{ fontSize: 20 }}
                                 description={item.descricao}
                                 descriptionStyle={{ marginBottom: 5 }}
@@ -47,4 +49,4 @@ function Municipios({navigation}){
     )
 }
 
-export default Municipios 
+export default Empresas

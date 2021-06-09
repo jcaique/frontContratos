@@ -4,9 +4,9 @@ import { FontAwesome5 } from '@expo/vector-icons'
 
 const Tab = createBottomTabNavigator()
 
-// import Contratos from '../screens/Contratos'
-import Empresas from '../screens/Empresas'
-import Municipios from '../screens/Municipios'
+import Contratos from '../screens/Contrato/Contratos'
+import Empresas from '../screens/Empresa/Empresas'
+import Municipios from '../screens/Municipio/Municipios'
 
 function Tabs() {
     return (
@@ -22,13 +22,14 @@ function Tabs() {
                 },
             }}>
 
-            {/* <Tab.Navigator
+            <Tab.Screen
                 name='Contratos'
                 component={Contratos}
                 options={{
-                    tabBarIcon: () => (<FontAwesome5 name='file-contract' />)
+                    tabBarIcon: () => (<FontAwesome5 name='file-contract' size={24}/>),
+                    tabBarLabel: 'Contratos'
                 }}
-            /> */}
+            />
 
             <Tab.Screen
                 name='Empresas'
